@@ -1,0 +1,37 @@
+# Build
+instrumentation/build/
+*.exe
+*.o
+*.obj
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dump output
+dump/
+
+# Generated output
+output/
+
+# External HE libraries (install separately per README)
+SEAL/
+SEAL-install/
+openfhe-development/
+HElib/
+
+# Logs
+*.log
+helib.log

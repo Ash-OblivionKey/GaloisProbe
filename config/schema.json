@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Evaluation Key Dump Schema",
+  "description": "Schema for dumped evaluation-key artifacts. See docs/ARCHITECTURE.md §4.",
+  "metadata": {
+    "type": "object",
+    "required": ["library", "version", "N", "primes", "timestamp"],
+    "properties": {
+      "library": { "type": "string", "enum": ["helib", "seal", "openfhe"] },
+      "version": { "type": "string" },
+      "N": { "type": "integer", "minimum": 1 },
+      "primes": {
+        "type": "array",
+        "items": { "type": "integer" }
+      },
+      "levels": { "type": "integer", "minimum": 0 },
+      "relin_blocks": { "type": "integer", "minimum": 0 },
+      "rotation_count": { "type": "integer", "minimum": 0 },
+      "timestamp": { "type": "string", "format": "date-time" },
+      "in_ntt_domain": { "type": "boolean", "default": false }
+    }
+  },
+  "block_metadata": {
+    "type": "object",
+    "required": ["key_type", "level_index", "decomposition_block", "prime_index", "component"],
+    "properties": {
+      "key_type": { "type": "string", "enum": ["relin", "rotation"] },
+      "automorphism_index": { "type": "integer" },
+      "level_index": { "type": "integer", "minimum": 0 },
+      "decomposition_block": { "type": "integer", "minimum": 0 },
+      "prime_index": { "type": "integer", "minimum": 0 },
+      "component": { "type": "string", "enum": ["ksk_0", "ksk_1"] },
+      "modulus": { "type": "integer" },
+      "in_ntt_domain": { "type": "boolean" }
+    }
+  },
+  "file_naming": {
+    "relin": "block_{l}_prime_{i}_{component}.bin",
+    "rotation": "automorphism_{a}/level_{lev}/block_{l}_prime_{i}_{component}.bin"
+  }
+}

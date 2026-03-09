@@ -1,0 +1,21 @@
+{
+  "_comment": "Locked experiment configuration. Update when starting new experiment.",
+  "created": "2025-02-16",
+  "libraries": {
+    "seal": {"version": "4.1.2", "path": ""},
+    "helib": {"version": "2.3.0", "path": "", "enabled": false}
+  },
+  "parameters": {
+    "regime": "standards_aligned",
+    "N": 4096,
+    "scheme": "ckks",
+    "poly_modulus": 4096
+  },
+  "paths": {
+    "dump_base": "dump",
+    "output_base": "output",
+    "logs_dir": "output/logs",
+    "results_dir": "output/results",
+    "reports_dir": "output/reports"
+  }
+}

@@ -1,0 +1,2 @@
+# Ensure shell scripts use LF on all platforms (fixes WSL/bash\r error)
+*.sh text eol=lf

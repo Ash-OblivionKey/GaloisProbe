@@ -1,0 +1,40 @@
+{
+  "_comment": "Parameter sets for evaluation-key correlation experiments. See docs/ARCHITECTURE.md §11.",
+  "libraries": {
+    "helib": {
+      "version": "2.3.0",
+      "url": "https://github.com/homenc/HElib"
+    },
+    "seal": {
+      "version": "4.1.2",
+      "url": "https://github.com/microsoft/SEAL"
+    }
+  },
+  "regimes": {
+    "standards_aligned": {
+      "description": "128-bit security, HE Standard tables",
+      "N": 4096,
+      "log_q": 109,
+      "primes_bits": [50, 60],
+      "levels": 4
+    },
+    "optimization_stress": {
+      "description": "KLSS23/Mono-Güneysu regimes, N=2^15",
+      "N": 32768,
+      "log_q": 120,
+      "primes_bits": [50, 60],
+      "levels": 8,
+      "decomposition_omega": 3,
+      "prime_switch_kappa": 2
+    }
+  },
+  "dump": {
+    "domain": "coefficient",
+    "in_ntt_domain": false,
+    "subset_strategy": {
+      "max_primes": 3,
+      "max_levels": 2,
+      "max_rotations": 4
+    }
+  }
+}
